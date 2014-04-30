@@ -4,7 +4,6 @@ import processing.core.*;
 public class MugPrintScreen extends PApplet{
 
 	PImage img1;
-	
 	PImage img2;
 	PImage img3;
 	PImage img4;
