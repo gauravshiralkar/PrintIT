@@ -19,7 +19,7 @@ public class SizeA0PosterPrint implements ChainHandler{
 		if (x >= 38 && y  >= 217						//Corporate Event
 				&& x <= 154 && y <= 390) {
 			System.out.println("**********Size A0************");
-			appController.setCurrentScreen(((HomeScreen)appController.getHomeScreen()).getMugPrint());
+			appController.setCurrentScreen(appController.getUploadScreen());
 		}
 		else{
 			if (successor != null){
