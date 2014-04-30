@@ -9,7 +9,6 @@ public class CeramicMug implements ChainHandler{
 	public CeramicMug(AppController appController)
 	{
 		this.appController=appController;
-		
 	}
 	@Override
 	public void handleRequest(int x, int y) {
