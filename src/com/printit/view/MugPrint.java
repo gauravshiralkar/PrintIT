@@ -53,7 +53,7 @@ public class MugPrint implements IScreen, ChainHandler {
 
 	@Override
 	public void draw(PApplet applet) {
-		PImage img=applet.loadImage("/phone.png");
+		PImage img=applet.loadImage("mugscreen.png");
 		applet.image(img, 0,0);
 		img1 = applet.loadImage("ceramicmug.jpg");
 		img2= applet.loadImage("plasticmug.jpg");
@@ -61,18 +61,18 @@ public class MugPrint implements IScreen, ChainHandler {
 		img4= applet.loadImage("steelmug.jpg");
 		
 		// TODO Auto-generated method stub
-		
-		applet.image(img1, 72, 248);
-		
-		
-		
-		applet.image(img2, 202,248);
+		//Sports = applet.loadImage("sports.png");
+		applet.image(img1, 44, 214);
 		
 		
-		applet.image(img3, 72,374);
+		//Corporate = applet.loadImage("corporate.png");
+		applet.image(img2, 196,218);
 		
+		//Music = applet.loadImage("music.png");
+		applet.image(img3, 41,394);
 		
-		applet.image(img4, 202,374);
+		//Charity = applet.loadImage("charity.png");
+		applet.image(img4, 186,396);
 		
 	}
 	@Override
@@ -80,10 +80,11 @@ public class MugPrint implements IScreen, ChainHandler {
 		if(successor==null)System.out.println("Successor null in mug");
 		System.out.println("handle req in mug print"  + successor.toString());
 		// TODO Auto-generated method stub
-		if (x >= 45 && y  >= 210						
+		if (x >= 45 && y  >= 210						//Corporate Event
 				&& x <= 150 && y <= 315) {
 			System.out.println("**********MugPrint************");
 			appController.setCurrentScreen(((HomeScreen)appController.getHomeScreen()).getMugPrint());
+			
 		}
 		else{
 			if (successor != null){

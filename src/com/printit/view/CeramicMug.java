@@ -14,10 +14,10 @@ public class CeramicMug implements ChainHandler{
 	public void handleRequest(int x, int y) {
 		// TODO Auto-generated method stub
 		System.out.println("Handle of Cereamic Mug");
-		if (x >= 79 && y  >= 253						
-				&& x <= 139 && y <= 314) {
+		if (x >= 44 && y  >= 214						//Corporate Event
+				&& x <= 156 && y <= 317) {
 			System.out.println("**********CeramicPrint************");
-			appController.setCurrentScreen(((HomeScreen)appController.getHomeScreen()).getMugPrint());
+			appController.setCurrentScreen(appController.getUploadScreen());
 		}
 		else{
 			if (successor != null){

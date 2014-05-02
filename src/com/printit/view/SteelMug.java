@@ -17,7 +17,7 @@ public class SteelMug implements ChainHandler{
 		if (x >= 209 && y  >= 373						
 				&& x <= 286 && y <= 484) {
 			System.out.println("**********SteelPrint************");
-			appController.setCurrentScreen(((HomeScreen)appController.getHomeScreen()).getMugPrint());
+			appController.setCurrentScreen(appController.getUploadScreen());
 		}
 		else{
 			if (successor != null){

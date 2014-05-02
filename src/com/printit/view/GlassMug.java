@@ -17,7 +17,7 @@ public class GlassMug implements ChainHandler{
 		if (x >= 72 && y  >= 379						
 				&& x <= 145 && y <= 470) {
 			System.out.println("**********GlassPrint************");
-			appController.setCurrentScreen(((HomeScreen)appController.getHomeScreen()).getMugPrint());
+			appController.setCurrentScreen(appController.getUploadScreen());
 		}
 		else{
 			if (successor != null){

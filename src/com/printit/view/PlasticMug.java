@@ -17,7 +17,7 @@ public class PlasticMug implements ChainHandler{
 		if (x >= 206 && y  >= 260						
 				&& x <= 273 && y <= 334) {
 			System.out.println("**********PlasticPrint************");
-			appController.setCurrentScreen(((HomeScreen)appController.getHomeScreen()).getMugPrint());
+			appController.setCurrentScreen(appController.getUploadScreen());
 		}
 		else{
 			if (successor != null){

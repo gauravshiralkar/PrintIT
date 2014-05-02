@@ -2,6 +2,7 @@ package com.printit.controller;
 
 import com.printit.view.HomeScreen;
 import com.printit.view.PinScreen;
+import com.printit.view.UploadScreen;
 
 import processing.core.PApplet;
 
@@ -16,6 +17,7 @@ public class AppController extends PApplet{
 	
 	IScreen currentScreen;
 	IScreen mugPrint;
+	IScreen uploadScreen;
 	double cost;
 	
 	
@@ -26,6 +28,7 @@ public class AppController extends PApplet{
 		//mugPrint = new MugPrint(this);
 		
 		currentScreen = pinScreen;
+		uploadScreen=new UploadScreen(this);
 		//currentScreen = homeScreen;
 		
 		setCurrentScreen(pinScreen);
@@ -79,7 +82,14 @@ public class AppController extends PApplet{
 	public void setHomeScreen(IScreen homeScreen) {
 		this.homeScreen = homeScreen;
 	}
-
+	
+	public IScreen getUploadScreen(){
+		return uploadScreen;
+	}
+	
+	public void setUploadScreen(IScreen uploadScreen){
+		this.uploadScreen=uploadScreen;
+	}
 
 	
 }

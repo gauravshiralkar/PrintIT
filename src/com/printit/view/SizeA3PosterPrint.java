@@ -19,7 +19,7 @@ public class SizeA3PosterPrint implements ChainHandler{
 		if (x >= 201 && y  >= 417						
 				&& x <= 285 && y <= 475) {
 			System.out.println("**********Sise A3************");
-			appController.setCurrentScreen(((HomeScreen)appController.getHomeScreen()).getMugPrint());
+			appController.setCurrentScreen(appController.getUploadScreen());
 		}
 		else{
 			if (successor != null){
