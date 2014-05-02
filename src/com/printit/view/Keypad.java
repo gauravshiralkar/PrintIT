@@ -1,31 +1,37 @@
 package com.printit.view;
 
+import java.util.ArrayList;
+
 import processing.core.PApplet;
 import processing.core.PImage;
 
 import com.printit.controller.INumPad;
-import com.printit.controller.IPassCode;
+import com.printit.controller.IPassword;
+import com.printit.controller.IScreen;
 
-public class KeyPad implements INumPad{
+public class Keypad implements INumPad{
 
-	IPassCode NoPinState;
-	IPassCode OnePinState;
-	IPassCode TwoPinState;
-	IPassCode ThreePinState;
-	IPassCode FourPinState;	
-	IPassCode state;
+	IPassword NoPinState;
+	IPassword OnePinState;
+	IPassword TwoPinState;
+	IPassword ThreePinState;
+	IPassword FourPinState;	
+	IPassword state;
 	static String password = ""; 
 	PImage img;
+	
 	INumPad inumpad;
 	
-	public KeyPad(PApplet applet){
+	public Keypad(PApplet applet){
 		NoPinState = new NoPinState(this,applet);
 		OnePinState = new OnePinState(this,applet);
 		TwoPinState = new TwoPinState(this,applet);
 		ThreePinState = new ThreePinState(this,applet);
 		FourPinState = new FourPinState(this,applet);
 		state = NoPinState;
+		
 		inumpad = new NumPad(applet);
+		
 		
 	}	
 	
@@ -36,15 +42,16 @@ public class KeyPad implements INumPad{
 		applet.image(img, 0,0);
 
 		applet.image(applet.loadImage("/panel.png"), 22,135);
-		//applet.image(applet.loadImage("/event_home33.jpg"), 50,210);	
-		NumDisplay();
+		
+		display();
+		
 		
 	}
 	public static String getPassword() {
 		return password;
 	}
 	public static void setPassword(String password) {
-		KeyPad.password = password;
+		Keypad.password = password;
 	}	
 	
 	public String getState(){
@@ -53,48 +60,48 @@ public class KeyPad implements INumPad{
 		return state.getState();
 	}
 
-	public void setState(IPassCode state){
-		System.out.println("Set state as:: "+state);
+	public void setState(IPassword state){
+		System.out.println("State is "+state);
 
 		this.state=state;
 	}
 
-	public IPassCode getNoPinState(){
+	public IPassword getNoPinState(){
 
 		return NoPinState;
 	}
 
-	public IPassCode getOnePinState(){
+	public IPassword getOnePinState(){
 
 		return OnePinState;
 	}
 
-	public IPassCode getTwoPinState(){
+	public IPassword getTwoPinState(){
 
 		return TwoPinState;
 	}
 
-	public IPassCode getThreePinState(){
+	public IPassword getThreePinState(){
 
 		return ThreePinState;
 	}
 
-	public IPassCode getFourPinState(){
+	public IPassword getFourPinState(){
 
 		return FourPinState;
 	}
 
 
-	public void pressedNumber(String input){
+	public void enteredNumber(String input){
 
-		state.pressedNumber(input);
+		state.enteredNumber(input);
 		
 	}
 
-	public String backspace(){
+	public void deleteDigit(){
 
-		state.backspace();
-		return "bk";
+		state.deleteDigit();
+		
 	}
 
 	public void updatePassword(String num){
@@ -106,28 +113,13 @@ public class KeyPad implements INumPad{
 	}
 
 	@Override
-	public void NumDisplay() {
-		// TODO Auto-generated method stub
-			inumpad.NumDisplay();
+	public void display() {
+			
+			inumpad.display();
+		//}
 		
 	}
 
-	@Override
-	public void addDisplay(INumPad c) {
-		// TODO Auto-generated method stud
-		
-	}
-
-	@Override
-	public void removeDisplay(INumPad c) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public INumPad getDisplayNum(int i) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

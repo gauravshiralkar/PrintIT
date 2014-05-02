@@ -14,10 +14,10 @@ public class GlassMug implements ChainHandler{
 	public void handleRequest(int x, int y) {
 		// TODO Auto-generated method stub
 		System.out.println("Handle of Glass Mug");
-		if (x >= 41 && y  >= 314						//Corporate Event
-				&& x <= 164 && y <= 442) {
+		if (x >= 72 && y  >= 379						
+				&& x <= 145 && y <= 470) {
 			System.out.println("**********GlassPrint************");
-			appController.setCurrentScreen(appController.getUploadScreen());
+			appController.setCurrentScreen(((HomeScreen)appController.getHomeScreen()).getMugPrint());
 		}
 		else{
 			if (successor != null){

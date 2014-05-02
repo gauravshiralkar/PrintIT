@@ -2,28 +2,32 @@ package com.printit.view;
 
 import processing.core.PApplet;
 
-import com.printit.controller.IPassCode;
+import com.printit.controller.IPassword;
+import com.printit.controller.IPasswordProxy;
+import com.printit.controller.PasswordProxy;
 
-public class FourPinState implements IPassCode{
+public class FourPinState implements IPassword{
 
-	KeyPad keypad;
+	Keypad keypad;
 	PApplet applet;
-	public FourPinState(KeyPad keypad,PApplet applet){
+	IPasswordProxy pp;
+	public FourPinState(Keypad keypad,PApplet applet){
 		this.keypad = keypad;
 		this.applet = applet;
+		pp = new PasswordProxy();
 	}
 	@Override
-	public void pressedNumber(String input) {
+	public void enteredNumber(String num) {
 		// TODO Auto-generated method stub
-		System.out.println("In four pin state pass is:: "+KeyPad.getPassword());
-		if(!(KeyPad.getPassword().equals("1234"))){
-			System.out.println("Inside icorrect");
-			applet.image(applet.loadImage("/password_icon - white.png"), 205,170);
-			applet.image(applet.loadImage("/password_icon - white.png"), 135,170);
-			applet.image(applet.loadImage("/password_icon - white.png"), 60,170);
+		System.out.println("FOUR PIN STATE"+Keypad.getPassword());
+		if(!(pp.checkPassword(Keypad.getPassword()))){
+			
+			applet.image(applet.loadImage("/delete-password.png"), 207,168);
+			applet.image(applet.loadImage("delete-password.png"), 137,171);
+			applet.image(applet.loadImage("/delete-password.png"), 58,172);
 			applet.fill(255,0,0);			
-			applet.text("Incorrect Pin, Please enter a valid Pin",40,40);
-			KeyPad.setPassword("");
+			applet.text("The entered PIN is invalid. Please try again",40,40);
+			Keypad.setPassword("");
 			keypad.setState(keypad.getNoPinState());
 			
 			
@@ -31,14 +35,11 @@ public class FourPinState implements IPassCode{
 	}
 
 	@Override
-	public void backspace() {
+	public void deleteDigit() {
 		
 		keypad.updatePassword("");
 		keypad.setState(keypad.getThreePinState());
-		/*applet.image(applet.loadImage("/password_icon - white.png"), 220,170);
-		applet.image(applet.loadImage("/password_icon - white.png"), 205,170);
-		applet.image(applet.loadImage("/password_icon - white.png"), 135,170);
-		applet.image(applet.loadImage("/password_icon - white.png"), 60,170);*/
+		
 	}
 
 	@Override
@@ -46,6 +47,7 @@ public class FourPinState implements IPassCode{
 
 		return "FourPinState";
 	}
+	
 
 	
 

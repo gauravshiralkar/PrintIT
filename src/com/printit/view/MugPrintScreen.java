@@ -17,14 +17,7 @@ public class MugPrintScreen extends PApplet{
 	}
 	 
 	public void draw(){
-		/*fill(153);
-		  rect(120, 150, 120, 120);  
-		  fill(153);
-		  rect(120, 350, 120, 120);
-		  fill(153);
-		  rect(325, 150, 120, 120);
-		  fill(153);
-		  rect(325, 350, 120, 120);*/
+		
 		  
 		  image(img1, 25,43);
 		  image(img2, 125,43);

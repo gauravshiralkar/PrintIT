@@ -16,10 +16,10 @@ public class SizeA3PosterPrint implements ChainHandler{
 	public void handleRequest(int x, int y) {
 		// TODO Auto-generated method stub
 		System.out.println("Handle of SizeA3PosterPrint");
-		if (x >= 201 && y  >= 417						//Corporate Event
+		if (x >= 201 && y  >= 417						
 				&& x <= 285 && y <= 475) {
 			System.out.println("**********Sise A3************");
-			appController.setCurrentScreen(appController.getUploadScreen());
+			appController.setCurrentScreen(((HomeScreen)appController.getHomeScreen()).getMugPrint());
 		}
 		else{
 			if (successor != null){

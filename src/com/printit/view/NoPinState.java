@@ -2,32 +2,32 @@ package com.printit.view;
 
 import processing.core.PApplet;
 
-import com.printit.controller.IPassCode;
+import com.printit.controller.IPassword;
 
 
-public class NoPinState implements IPassCode{
+public class NoPinState implements IPassword{
 
-	KeyPad keypad;
+	Keypad keypad;
 	PApplet applet;
 	
-	public NoPinState(KeyPad keypad,PApplet applet){
+	public NoPinState(Keypad keypad,PApplet applet){
 		this.keypad = keypad;
 		this.applet = applet;
 	}
 	@Override
-	public void pressedNumber(String input) {
+	public void enteredNumber(String num) {
 		// TODO Auto-generated method stub
 		applet.fill(0,0,0);			
-		applet.text("Incorrect Pin, Please enter a valid Pin",40,40);	
-		keypad.updatePassword(input);
-		System.out.println("In No pin state pass is:: "+KeyPad.getPassword());		
-		applet.image(applet.loadImage("/password_icon.png"), 60,170);
+			
+		keypad.updatePassword(num);
+		System.out.println("NO PIN STATE "+Keypad.getPassword());		
+		applet.image(applet.loadImage("/password.png"), 58,172);
 		keypad.setState(keypad.getOnePinState());
 		
 	}
 
 	@Override
-	public void backspace() {
+	public void deleteDigit() {
 		// TODO Auto-generated method stub
 		keypad.updatePassword("");
 		keypad.setState(keypad.getNoPinState());

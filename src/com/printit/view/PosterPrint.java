@@ -58,7 +58,7 @@ public class PosterPrint implements IScreen, ChainHandler {
 		if(successor==null)System.out.println("Successor null in Poster");
 		System.out.println("handle req in poster print" + successor.toString());
 		// TODO Auto-generated method stub
-		if (x >= 42 && y >= 382						//Corporate Event
+		if (x >= 42 && y >= 382						
 				&& x <= 163 && y <= 516) {
 			System.out.println("********PosterPrint************");
 			

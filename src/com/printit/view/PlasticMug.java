@@ -14,10 +14,10 @@ public class PlasticMug implements ChainHandler{
 	public void handleRequest(int x, int y) {
 		// TODO Auto-generated method stub
 		System.out.println("Handle of Plastic Mug");
-		if (x >= 196 && y  >= 218						//Corporate Event
-				&& x <= 299 && y <= 320) {
+		if (x >= 206 && y  >= 260						
+				&& x <= 273 && y <= 334) {
 			System.out.println("**********PlasticPrint************");
-			appController.setCurrentScreen(appController.getUploadScreen());
+			appController.setCurrentScreen(((HomeScreen)appController.getHomeScreen()).getMugPrint());
 		}
 		else{
 			if (successor != null){
