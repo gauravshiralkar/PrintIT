@@ -13,8 +13,22 @@ public class CollagePrint implements IScreen, ChainHandler{
 	ChainHandler successor=null;
 	PImage img;
 	
+	Style1 style1;
+	Style2 style2;
+	Style3 style3;
+	Style4 style4;
+	
 	public CollagePrint(AppController appController){
 		this.appController = appController;
+		
+		style1=new Style1(appController);
+		style2=new Style2(appController);
+		style3=new Style3(appController);
+		style4=new Style4(appController);
+		
+		style1.setSuccessor(style2);
+		style2.setSuccessor(style3);
+		style3.setSuccessor(style4);
 	}
 
 	@Override
