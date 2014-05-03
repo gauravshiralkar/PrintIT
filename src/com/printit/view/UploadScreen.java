@@ -34,6 +34,8 @@ public class UploadScreen implements IScreen{
 		applet.size(364,688);
 		img=applet.loadImage("uploadscreen.png");
 		applet.image(img,0,0);
+		applet.textSize(28);
+    	applet.text("Final Price: $"+(float)appController.getPrice(), 40, 300);
 		
 	}
 

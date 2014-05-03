@@ -9,7 +9,7 @@ import com.printit.controller.INumPad;
 import com.printit.controller.IPassword;
 import com.printit.controller.IScreen;
 
-public class Keypad implements INumPad{
+public class Keypad{
 
 	IPassword NoPinState;
 	IPassword OnePinState;
@@ -112,7 +112,7 @@ public class Keypad implements INumPad{
 			password += num;			
 	}
 
-	@Override
+	
 	public void display() {
 			
 			inumpad.display();

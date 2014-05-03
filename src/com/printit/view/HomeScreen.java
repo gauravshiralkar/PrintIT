@@ -13,7 +13,7 @@ import com.printit.controller.ChainHandler;
 import com.printit.controller.IScreen;
 
 
-public class HomeScreen implements IScreen, ChainHandler {
+public class HomeScreen implements IScreen{
 	
 	PImage upc,img,Sports, Corporate, Music, Charity;
 	AppController appController;
@@ -96,7 +96,7 @@ public class HomeScreen implements IScreen, ChainHandler {
 	@Override
 	public void mousePressed(PApplet applet) {
 		
-		handleRequest(applet.mouseX, applet.mouseY);
+		mugPrint.handleRequest(applet.mouseX, applet.mouseY);
 	
 	}
 
@@ -111,21 +111,6 @@ public class HomeScreen implements IScreen, ChainHandler {
 
 	}
 
-	@Override
-	public void handleRequest(int x, int y) {
-		// TODO Auto-generated method stub
-		mugPrint.handleRequest(x, y);
-		
-		System.out.println("mouse: " + x + "  " + y);
-		
-		
-	}
-
-	@Override
-	public void setSuccessor(ChainHandler next) {
-		// TODO Auto-generated method stub
-	
-		
-	}
-
 }
+
+

@@ -2,6 +2,8 @@ package com.printit.view;
 
 import com.printit.controller.AppController;
 import com.printit.controller.ChainHandler;
+import com.printit.controller.IPriceComponent;
+import com.printit.controller.PriceConcreteComponent;
 
 public class SteelMug implements ChainHandler{
 	ChainHandler successor;
@@ -17,6 +19,7 @@ public class SteelMug implements ChainHandler{
 		if (x >= 209 && y  >= 373						
 				&& x <= 286 && y <= 484) {
 			System.out.println("**********SteelPrint************");
+			setPrice();
 			appController.setCurrentScreen(appController.getUploadScreen());
 		}
 		else{
@@ -33,6 +36,12 @@ public class SteelMug implements ChainHandler{
 	public void setSuccessor(ChainHandler next) {
 		// TODO Auto-generated method stub
 		this.successor = next;
+	}
+	
+	public void setPrice()
+	{
+		IPriceComponent ipc = new SteelMugConcreteDecorator(new PriceConcreteComponent());
+		appController.setPrice(ipc.getPrice());
 	}
 
 }

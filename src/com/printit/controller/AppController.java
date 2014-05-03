@@ -18,11 +18,12 @@ public class AppController extends PApplet{
 	IScreen currentScreen;
 	IScreen mugPrint;
 	IScreen uploadScreen;
-	double cost;
+	double price;
 	
 	
 	
 	public AppController(){
+		System.out.println("This = "+ this.toString());
 		pinScreen = new PinScreen(this);
 		homeScreen = new HomeScreen(this);
 		//mugPrint = new MugPrint(this);
@@ -90,6 +91,20 @@ public class AppController extends PApplet{
 	public void setUploadScreen(IScreen uploadScreen){
 		this.uploadScreen=uploadScreen;
 	}
+
+
+
+	public double getPrice() {
+		return price;
+	}
+
+
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+	
 
 	
 }

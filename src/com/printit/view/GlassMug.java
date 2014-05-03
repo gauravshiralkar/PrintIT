@@ -2,6 +2,8 @@ package com.printit.view;
 
 import com.printit.controller.AppController;
 import com.printit.controller.ChainHandler;
+import com.printit.controller.IPriceComponent;
+import com.printit.controller.PriceConcreteComponent;
 
 public class GlassMug implements ChainHandler{
 	ChainHandler successor;
@@ -17,6 +19,7 @@ public class GlassMug implements ChainHandler{
 		if (x >= 72 && y  >= 379						
 				&& x <= 145 && y <= 470) {
 			System.out.println("**********GlassPrint************");
+			setPrice();
 			appController.setCurrentScreen(appController.getUploadScreen());
 		}
 		else{
@@ -35,5 +38,13 @@ public class GlassMug implements ChainHandler{
 		// TODO Auto-generated method stub
 		this.successor = next;
 	}
+	
+	public void setPrice()
+	{
+		IPriceComponent ipc = new GlassMugConcreteDecorator(new PriceConcreteComponent());
+		appController.setPrice(ipc.getPrice());
+	}
+	
+	
 
 }

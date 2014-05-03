@@ -2,6 +2,8 @@ package com.printit.view;
 
 import com.printit.controller.AppController;
 import com.printit.controller.ChainHandler;
+import com.printit.controller.IPriceComponent;
+import com.printit.controller.PriceConcreteComponent;
 
 public class SizeA2PosterPrint implements ChainHandler{
 
@@ -19,6 +21,7 @@ public class SizeA2PosterPrint implements ChainHandler{
 		if (x >= 44 && y  >= 409						
 				&& x <= 130 && y <= 538) {
 			System.out.println("**********Size A2************");
+			setPrice();
 			appController.setCurrentScreen(appController.getUploadScreen());
 		}
 		else{
@@ -38,6 +41,12 @@ public class SizeA2PosterPrint implements ChainHandler{
 		// TODO Auto-generated method stub
 		this.successor = next;
 		
+	}
+	
+	public void setPrice()
+	{
+		IPriceComponent ipc = new SizeA2ConcreteDecorator(new PriceConcreteComponent());
+		appController.setPrice(ipc.getPrice());
 	}
 
 }
