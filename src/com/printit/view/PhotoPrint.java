@@ -13,8 +13,19 @@ public class PhotoPrint implements IScreen, ChainHandler{
 	ChainHandler successor=null;
 	PImage img;
 	
+	SmallPhoto smallPhoto;
+	MediumPhoto mediumPhoto;
+	LargePhoto largePhoto;
+	
 	public PhotoPrint(AppController appController){
 		this.appController = appController;
+		
+		smallPhoto=new SmallPhoto(appController);
+		mediumPhoto=new MediumPhoto(appController);
+		largePhoto=new LargePhoto(appController);
+		
+		smallPhoto.setSuccessor(mediumPhoto);
+		mediumPhoto.setSuccessor(largePhoto);
 	}
 
 	@Override
@@ -26,6 +37,7 @@ public class PhotoPrint implements IScreen, ChainHandler{
 	@Override
 	public void mousePressed(PApplet applet) {
 		System.out.println(applet.mouseX+"  "+ applet.mouseY);
+		smallPhoto.handleRequest(applet.mouseX, applet.mouseY);
 		// TODO Auto-generated method stub
 		
 	}

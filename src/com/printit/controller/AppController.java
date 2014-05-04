@@ -3,6 +3,8 @@ package com.printit.controller;
 import com.printit.view.HomeScreen;
 import com.printit.view.PinScreen;
 import com.printit.view.UploadScreen;
+import com.printit.view.OrderSummary;
+import com.printit.view.PaymentScreen;
 
 import processing.core.PApplet;
 
@@ -18,6 +20,8 @@ public class AppController extends PApplet{
 	IScreen currentScreen;
 	IScreen mugPrint;
 	IScreen uploadScreen;
+	IScreen orderSummary;
+	IScreen paymentScreen;
 	double price;
 	
 	
@@ -30,6 +34,8 @@ public class AppController extends PApplet{
 		
 		currentScreen = pinScreen;
 		uploadScreen=new UploadScreen(this);
+		orderSummary=new OrderSummary(this);
+		paymentScreen=new PaymentScreen(this);
 		//currentScreen = homeScreen;
 		
 		setCurrentScreen(pinScreen);
@@ -104,7 +110,11 @@ public class AppController extends PApplet{
 		this.price = price;
 	}
 	
+	public IScreen getOrderSummary(){
+		return orderSummary;
+	}
 	
-
-	
+	public IScreen getPaymentScreen(){
+		return paymentScreen;
+	}
 }

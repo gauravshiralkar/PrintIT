@@ -4,26 +4,29 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 import com.printit.controller.AppController;
+import com.printit.controller.ChainHandler;
 import com.printit.controller.IScreen;
 
-public class UploadScreen implements IScreen{
+public class OrderSummary implements IScreen{
+	
 	AppController appController;
 	PImage img;
-	public UploadScreen(AppController appController){
+	
+	public OrderSummary(AppController appController){
 		this.appController = appController;
+		
 	}
-
 
 	@Override
 	public void setup(PApplet applet) {
 		// TODO Auto-generated method stub
-		
-		
 	}
+
 
 	@Override
 	public void mousePressed(PApplet applet) {
-		// TODO Auto-generated method stub
+		
+		System.out.println(applet.mouseX+"  "+ applet.mouseY);
 		int x,y;
 		x=applet.mouseX;
 		y=applet.mouseY;
@@ -31,7 +34,7 @@ public class UploadScreen implements IScreen{
 		if (x >= 140 && y  >= 520						//Corporate Event
 				&& x <= 210 && y <= 561) {
 			System.out.println("**********UploadScreen************");
-			appController.setCurrentScreen(appController.getOrderSummary());
+			appController.setCurrentScreen(appController.getPaymentScreen());
 		}
 		
 	}
@@ -39,13 +42,12 @@ public class UploadScreen implements IScreen{
 	@Override
 	public void draw(PApplet applet) {
 		// TODO Auto-generated method stub
+		PImage img1=applet.loadImage("/phone.png");
+		applet.image(img1, 0,0);
 		
-		applet.size(364,688);
-		img=applet.loadImage("uploadscreen.png");
-		applet.image(img,0,0);
-		applet.textSize(28);
-    	//applet.text("Final Price: $"+(float)appController.getPrice(), 40, 300);
-		
+		img = applet.loadImage("order_summary.png");
+		applet.image(img,22,118);
 	}
-
+	
 }
+

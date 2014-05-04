@@ -40,6 +40,7 @@ public class CollagePrint implements IScreen, ChainHandler{
 	@Override
 	public void mousePressed(PApplet applet) {
 		System.out.println(applet.mouseX+"  "+ applet.mouseY);
+		style1.handleRequest(applet.mouseX, applet.mouseY);
 		// TODO Auto-generated method stub
 		
 	}
