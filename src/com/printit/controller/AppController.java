@@ -11,7 +11,6 @@ import processing.core.PApplet;
 public class AppController extends PApplet{
 
 	private static final long serialVersionUID = 1L;
-	
 	IScreen pinScreen;
 	IScreen homeScreen;
 	IScreen sportsScreen;
