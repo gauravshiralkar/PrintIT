@@ -10,11 +10,11 @@ public class ThreePinState implements IPassword{
 
 	Keypad keypad;
 	PApplet applet;
-	IPasswordProxy pp;
+	//IPasswordProxy pp;
 	public ThreePinState(Keypad keypad,PApplet applet){
 		this.keypad = keypad;
 		this.applet = applet;
-		pp = new PasswordProxy();
+		//pp = new PasswordProxy();
 	}
 	@Override
 	public void enteredNumber(String num) {
@@ -22,7 +22,8 @@ public class ThreePinState implements IPassword{
 		keypad.updatePassword(num);
 	
 		System.out.println("GOING TO FOUR PIN STATE "+Keypad.getPassword());
-		if(!(pp.checkPassword(Keypad.getPassword()))){
+		//if(!(pp.checkPassword(Keypad.getPassword()))){
+			if(!Keypad.getPassword().equalsIgnoreCase("4567")){
 			System.out.println("incorrect password");
 			applet.image(applet.loadImage("/delete-password.png"), 207,168);
 			applet.image(applet.loadImage("/delete-password.png"), 137,171);

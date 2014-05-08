@@ -10,18 +10,18 @@ public class FourPinState implements IPassword{
 
 	Keypad keypad;
 	PApplet applet;
-	IPasswordProxy pp;
+	//IPasswordProxy pp;
 	public FourPinState(Keypad keypad,PApplet applet){
 		this.keypad = keypad;
 		this.applet = applet;
-		pp = new PasswordProxy();
+		//pp = new PasswordProxy();
 	}
 	@Override
 	public void enteredNumber(String num) {
 		// TODO Auto-generated method stub
 		System.out.println("FOUR PIN STATE"+Keypad.getPassword());
-		if(!(pp.checkPassword(Keypad.getPassword()))){
-			
+		//if	(!(pp.checkPassword(Keypad.getPassword()))){
+		if(!Keypad.getPassword().equalsIgnoreCase("4567")){
 			applet.image(applet.loadImage("/delete-password.png"), 207,168);
 			applet.image(applet.loadImage("delete-password.png"), 137,171);
 			applet.image(applet.loadImage("/delete-password.png"), 58,172);
