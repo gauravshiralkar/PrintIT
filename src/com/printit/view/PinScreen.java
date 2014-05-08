@@ -20,7 +20,7 @@ public class PinScreen implements IScreen{
 	@Override
 	public void setup(PApplet applet) {
 		// TODO Auto-generated method stub
-		pp = new PasswordProxy(appController);
+		pp = new PasswordProxy();
 		keypad = new Keypad(applet);
 		keypad.draw(applet);
 	}
@@ -112,14 +112,11 @@ public class PinScreen implements IScreen{
 			appController.setCurrentScreen(appController.getPinScreen());
 		}
 		
-		else 
-		{
-			pp.authenticate(Keypad.getPassword());
-			System.out.println("correct password");
+		else if(pp.checkPassword(Keypad.getPassword())){
+		System.out.println("correct password");
+			appController.setCurrentScreen(appController.getHomeScreen());
 			
-			//appController.setCurrentScreen(appController.getHomeScreen());
 		}
-
 	}
 
 }
