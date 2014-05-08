@@ -1,11 +1,14 @@
 package com.printit.view;
 
+import processing.core.PApplet;
+
 import com.printit.controller.AppController;
 import com.printit.controller.ChainHandler;
 import com.printit.controller.IPriceComponent;
+import com.printit.controller.IScreen;
 import com.printit.controller.PriceConcreteComponent;
 
-public class MediumPhoto implements ChainHandler{
+public class MediumPhoto implements IScreen, ChainHandler{
 	ChainHandler successor;
 	AppController appController;
 	public MediumPhoto(AppController appController)
@@ -43,8 +46,23 @@ public class MediumPhoto implements ChainHandler{
 	
 	public void setPrice()
 	{
-		IPriceComponent ipc = new CeramicMugConcreteDecorator(new PriceConcreteComponent());
+		IPriceComponent ipc = new MediumPhotoPriceDecorator(new PriceConcreteComponent());
 		appController.setPrice(ipc.getPrice());
+	}
+	@Override
+	public void setup(PApplet applet) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mousePressed(PApplet applet) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void draw(PApplet applet) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

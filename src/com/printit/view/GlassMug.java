@@ -1,11 +1,14 @@
 package com.printit.view;
 
+import processing.core.PApplet;
+
 import com.printit.controller.AppController;
 import com.printit.controller.ChainHandler;
 import com.printit.controller.IPriceComponent;
+import com.printit.controller.IScreen;
 import com.printit.controller.PriceConcreteComponent;
 
-public class GlassMug implements ChainHandler{
+public class GlassMug implements IScreen, ChainHandler{
 	ChainHandler successor;
 	AppController appController;
 	public GlassMug(AppController appController)
@@ -18,6 +21,7 @@ public class GlassMug implements ChainHandler{
 		System.out.println("Handle of Glass Mug");
 		if (x >= 72 && y  >= 379						
 				&& x <= 145 && y <= 470) {
+			
 			System.out.println("**********GlassPrint************");
 			setPrice();
 			appController.setCurrentScreen(appController.getUploadScreen());
@@ -42,7 +46,23 @@ public class GlassMug implements ChainHandler{
 	public void setPrice()
 	{
 		IPriceComponent ipc = new GlassMugConcreteDecorator(new PriceConcreteComponent());
+		//System.out.println("Amout " + ipc.getPrice());
 		appController.setPrice(ipc.getPrice());
+	}
+	@Override
+	public void setup(PApplet applet) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mousePressed(PApplet applet) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void draw(PApplet applet) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

@@ -31,7 +31,7 @@ public class PinScreen implements IScreen{
 		if (applet.mouseX > 22 && applet.mouseX < 128 && applet.mouseY > 410
 				&& applet.mouseY < 480) {
 
-			keypad.enteredNumber("1");
+			keypad.inputNumber("1");
 			setCurrentScreen();
 
 
@@ -39,57 +39,57 @@ public class PinScreen implements IScreen{
 
 		else if (applet.mouseX > 128 && applet.mouseX < 234 && applet.mouseY > 410
 				&& applet.mouseY < 480) {
-			keypad.enteredNumber("2");
+			keypad.inputNumber("2");
 			setCurrentScreen();
 		}
 
 		else if (applet.mouseX > 234 && applet.mouseX < 337 && applet.mouseY > 410
 				&& applet.mouseY < 480) {
-			keypad.enteredNumber("3");
+			keypad.inputNumber("3");
 			setCurrentScreen();
 
 		}
 		
 		else if (applet.mouseX > 22 && applet.mouseX < 128
 				&& applet.mouseY > 480 && applet.mouseY < 550) {
-			keypad.enteredNumber("4");
+			keypad.inputNumber("4");
 			setCurrentScreen();
 		}
 		
 		else if (applet.mouseX > 128 && applet.mouseX < 234
 				&& applet.mouseY > 480 && applet.mouseY < 550) {
-			keypad.enteredNumber("5");
+			keypad.inputNumber("5");
 			setCurrentScreen();
 		}
 		
 		else if (applet.mouseX > 234 && applet.mouseX < 337
 				&& applet.mouseY > 480 && applet.mouseY < 550) {
-			keypad.enteredNumber("6");
+			keypad.inputNumber("6");
 			setCurrentScreen();
 		}
 
 		else if (applet.mouseX > 22 && applet.mouseX < 128
 				&& applet.mouseY > 550 && applet.mouseY < 620) {
-			keypad.enteredNumber("7");
+			keypad.inputNumber("7");
 			setCurrentScreen();
 
 		}
 
 		else if (applet.mouseX > 128 && applet.mouseX < 234
 				&& applet.mouseY > 550 && applet.mouseY < 620) {
-			keypad.enteredNumber("8");
+			keypad.inputNumber("8");
 			setCurrentScreen();
 		}
 
 		else if (applet.mouseX > 234 && applet.mouseX < 337
 				&& applet.mouseY > 550 && applet.mouseY < 620) {
-			keypad.enteredNumber("9");
+			keypad.inputNumber("9");
 			setCurrentScreen();
 		}
 
 		else if (applet.mouseX > 128 && applet.mouseX < 234
 					&& applet.mouseY > 546 && applet.mouseY < 670) {
-			keypad.enteredNumber("0");
+			keypad.inputNumber("0");
 			setCurrentScreen();
 		}									
 

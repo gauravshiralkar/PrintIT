@@ -23,11 +23,11 @@ public class Keypad{
 	INumPad inumpad;
 	
 	public Keypad(PApplet applet){
-		NoPinState = new NoPinState(this,applet);
-		OnePinState = new OnePinState(this,applet);
-		TwoPinState = new TwoPinState(this,applet);
-		ThreePinState = new ThreePinState(this,applet);
-		FourPinState = new FourPinState(this,applet);
+		NoPinState = new NoPinDigit(this,applet);
+		OnePinState = new OnePinDigit(this,applet);
+		TwoPinState = new TwoPinDigit(this,applet);
+		ThreePinState = new ThreePinDigit(this,applet);
+		FourPinState = new FourPinDigit(this,applet);
 		state = NoPinState;
 		
 		inumpad = new NumPad(applet);
@@ -92,9 +92,9 @@ public class Keypad{
 	}
 
 
-	public void enteredNumber(String input){
+	public void inputNumber(String input){
 
-		state.enteredNumber(input);
+		state.inputNumber(input);
 		
 	}
 

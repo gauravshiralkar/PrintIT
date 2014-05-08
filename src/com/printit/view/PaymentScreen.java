@@ -25,8 +25,15 @@ public class PaymentScreen implements IScreen{
 	@Override
 	public void mousePressed(PApplet applet) {
 		System.out.println(applet.mouseX+"  "+ applet.mouseY);
-		//appController.setCurrentScreen(((HomeScreen)appController.getHomeScreen()).getPhotoPrint());
-		// TODO Auto-generated method stub
+		int x,y;
+		x=applet.mouseX;
+		y=applet.mouseY;
+		
+		if (x >= 140 && y  >= 520						//Corporate Event
+				&& x <= 210 && y <= 561) {
+			System.out.println("**********PaymentScreen************");
+			appController.setCurrentScreen(appController.getThankYouScreen());
+		}
 		
 	}
 
@@ -35,9 +42,10 @@ public class PaymentScreen implements IScreen{
 		// TODO Auto-generated method stub
 		PImage img1=applet.loadImage("/phone.png");
 		applet.image(img1, 0,0);
-		
+		applet.textSize(28);
 		img = applet.loadImage("payment.png");
 		applet.image(img,22,115);
+    	applet.text("Final Amount: $"+(float)appController.getPrice(), 38, 252);
 	}
 	
 }

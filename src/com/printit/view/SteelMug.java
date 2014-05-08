@@ -1,11 +1,14 @@
 package com.printit.view;
 
+import processing.core.PApplet;
+
 import com.printit.controller.AppController;
 import com.printit.controller.ChainHandler;
 import com.printit.controller.IPriceComponent;
+import com.printit.controller.IScreen;
 import com.printit.controller.PriceConcreteComponent;
 
-public class SteelMug implements ChainHandler{
+public class SteelMug implements IScreen, ChainHandler{
 	ChainHandler successor;
 	AppController appController;
 	public SteelMug(AppController appController)
@@ -42,6 +45,21 @@ public class SteelMug implements ChainHandler{
 	{
 		IPriceComponent ipc = new SteelMugConcreteDecorator(new PriceConcreteComponent());
 		appController.setPrice(ipc.getPrice());
+	}
+	@Override
+	public void setup(PApplet applet) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mousePressed(PApplet applet) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void draw(PApplet applet) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

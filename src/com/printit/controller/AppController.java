@@ -5,6 +5,7 @@ import com.printit.view.PinScreen;
 import com.printit.view.UploadScreen;
 import com.printit.view.OrderSummary;
 import com.printit.view.PaymentScreen;
+import com.printit.view.ThankYouScreen;
 
 import processing.core.PApplet;
 
@@ -22,6 +23,7 @@ public class AppController extends PApplet{
 	IScreen uploadScreen;
 	IScreen orderSummary;
 	IScreen paymentScreen;
+	IScreen thankyouScreen;
 	double price;
 	
 	
@@ -30,13 +32,11 @@ public class AppController extends PApplet{
 		System.out.println("This = "+ this.toString());
 		pinScreen = new PinScreen(this);
 		homeScreen = new HomeScreen(this);
-		//mugPrint = new MugPrint(this);
-		
 		currentScreen = pinScreen;
 		uploadScreen=new UploadScreen(this);
 		orderSummary=new OrderSummary(this);
 		paymentScreen=new PaymentScreen(this);
-		//currentScreen = homeScreen;
+		thankyouScreen=new ThankYouScreen(this);
 		
 		setCurrentScreen(pinScreen);
 	}
@@ -117,4 +117,9 @@ public class AppController extends PApplet{
 	public IScreen getPaymentScreen(){
 		return paymentScreen;
 	}
+	
+	public IScreen getThankYouScreen(){
+		return thankyouScreen;
+	}
+	
 }

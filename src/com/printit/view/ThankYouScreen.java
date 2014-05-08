@@ -4,15 +4,15 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 import com.printit.controller.AppController;
-import com.printit.controller.ChainHandler;
 import com.printit.controller.IScreen;
 
-public class OrderSummary implements IScreen{
+public class ThankYouScreen implements IScreen{
 	
 	AppController appController;
 	PImage img;
 	
-	public OrderSummary(AppController appController){
+	
+	public ThankYouScreen(AppController appController){
 		this.appController = appController;
 		
 	}
@@ -20,23 +20,15 @@ public class OrderSummary implements IScreen{
 	@Override
 	public void setup(PApplet applet) {
 		// TODO Auto-generated method stub
+		
 	}
 
 
 	@Override
 	public void mousePressed(PApplet applet) {
-		
+		// TODO Auto-generated method stub
 		System.out.println(applet.mouseX+"  "+ applet.mouseY);
-		int x,y;
-		x=applet.mouseX;
-		y=applet.mouseY;
-		
-		if (x >= 140 && y  >= 520						//Corporate Event
-				&& x <= 210 && y <= 561) {
-			System.out.println("**********OrderSummaryScreen************");
-			appController.setCurrentScreen(appController.getPaymentScreen());
-		}
-		
+				
 	}
 
 	@Override
@@ -44,11 +36,11 @@ public class OrderSummary implements IScreen{
 		// TODO Auto-generated method stub
 		PImage img1=applet.loadImage("/phone.png");
 		applet.image(img1, 0,0);
-		img = applet.loadImage("order_summary.png");
-		applet.image(img,22,118);
 		applet.textSize(28);
-    	applet.text("Final amount: $"+(float)appController.getPrice(), 38, 290);
+		img = applet.loadImage("thankYou.png");
+		applet.image(img,22,115);
 	}
+	
 	
 }
 
